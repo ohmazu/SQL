@@ -179,4 +179,4 @@ HAVING
 사용하기 전에 자꾸 까먹으니까...생산성 도구 활용!
 
 # 수행 인증
-![수행인증](sql_images\KakaoTalk_20250401_191001473.jpg)
+![수행인증](sql_images/KakaoTalk_20250401_191001473.jpg)
