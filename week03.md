@@ -134,4 +134,4 @@ SELECT
 <br>
 
 # 활동인증
-![활동인증](sql_images\sql3.jpg)
+![활동인증](sql_images/sql3.jpg)
