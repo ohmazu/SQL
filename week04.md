@@ -143,6 +143,8 @@ SELEC
  IF(1=2, '동일한 결과', '동일하지 않은 결과') AS result2
 ```
 
+<br>
+<br>
 
 # 4-8. 정리
 
@@ -169,6 +171,8 @@ GROUP BY <집계할 컬럼>
 **조건문**
 - CASE WHEN / IF
 
+<br>
+<br>
 
 # 4-9. BigQuery 공식 문서 확인하는 법
 
@@ -176,6 +180,8 @@ GROUP BY <집계할 컬럼>
 - 해당 기술을 어떻게 사용하면 좋은지에 대해 문서를 제공
 - 찾는 방법: 기술명+documentation
 
+<br>
+<br>
 
 # 수행 인증
 ![수행인증](sql_images/KakaoTalk_20250506_174011548_02.jpg)
