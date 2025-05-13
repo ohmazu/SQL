@@ -105,5 +105,5 @@ ON t1.key = t2.key
 
 
 # 수행 인증
-![수행인증](sql_images\KakaoTalk_20250513_170756647.jpg)
+![수행인증](sql_images/KakaoTalk_20250513_170756647.jpg)
 
