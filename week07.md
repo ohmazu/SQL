@@ -86,8 +86,24 @@
 * SubQueries에 대한 문법을 이해하고 활용할 수 있다.  
 ~~~
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+### 서브쿼리
+- 하나의 SQL문 안에 포함된 SELECT 문
+```
+SELECT *
+FROM t1
+WHERE col1 = (                 # 서브쿼리
+    SELECT col1 FROM t2
+) ;
+```
+- 서브쿼리는 반드시 괄호로 감싸야 함
+- 서브쿼리 중첩 가능
 
+**서브쿼리에서 허용되는 요소**
+- DISTINCT / GROUP BY / ORDER BY / LIMIT
+- JOIN / 인덱스 힌트 / UNION / 함수 / 주석
+
+**서브쿼리를 사용할 수 있는 외부 구문**
+- SELECT / INSERT / UPDATE / DELETE / SET / DO
 
 
 # 2. CTE
