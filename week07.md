@@ -88,10 +88,10 @@
 
 ### 서브쿼리
 - 하나의 SQL문 안에 포함된 SELECT 문
-```
+```sql
 SELECT *
 FROM t1
-WHERE col1 = (                 # 서브쿼리
+WHERE col1 = (                 -- 서브쿼리
     SELECT col1 FROM t2
 ) ;
 ```
@@ -136,7 +136,7 @@ SELECT * FROM t1
 ```
 
 2. 특정 값이 2번 등장하는 경우 찾기
-```
+```sql
 # t1 테이블에서 특정 값이 2번 등장하는 경우
 SELECT * FROM t1 AS t
   WHERE 2 = (SELECT COUNT(*) FROM t1 WHERE t1.id = t.id);
