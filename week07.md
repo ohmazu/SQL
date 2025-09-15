@@ -93,7 +93,7 @@ SELECT *
 FROM t1
 WHERE col1 = (                 -- 서브쿼리
     SELECT col1 FROM t2
-) ;
+) ; 
 ```
 - 서브쿼리는 반드시 괄호로 감싸야 함
 - 서브쿼리 중첩 가능
@@ -155,7 +155,7 @@ operand comparison_operator ANY (subquery)
 operand IN (subquery)
 operand comparison_operator SOME (subquery)
 ```
-- comparison_operator: =, >, <, >=, <=, <>, !=
+- comparison_operator: `=, >, <, >=, <=, <>, !=`
 
 
 **ANY**
