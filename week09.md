@@ -330,18 +330,59 @@ https://leetcode.com/problems/department-top-three-salaries/
 > LeetCode 185. Department Top Three Salaries 
 >
 > 학습 포인트 : DENSE_RANK( ) + PARTITION BY 사용으로 그룹 내 상위 N개 추출
+```sql
+SELECT d.name AS Department,
+       e.name AS Employee,
+       e.salary AS Salary
+FROM (
+    SELECT id,
+           name,
+           salary,
+           departmentId,
+           DENSE_RANK() OVER (
+               PARTITION BY departmentId
+               ORDER BY salary DESC
+           ) AS rnk
+    FROM Employee
+) e
+JOIN Department d
+  ON e.departmentId = d.id
+WHERE e.rnk <= 3;
+``` 
 
 https://leetcode.com/problems/consecutive-numbers/
 
 > LeetCode 180. Consecutive Numbers 
 >
 > 학습 포인트 : LAG( ) 함수로 이전 값과 비교하여 연속 데이터 탐지 
+```sql
+SELECT DISTINCT num AS ConsecutiveNums
+FROM (
+    SELECT num,
+           LAG(num, 1) OVER (ORDER BY id) AS prev1,
+           LAG(num, 2) OVER (ORDER BY id) AS prev2
+    FROM Logs
+) t
+WHERE num = prev1 AND num = prev2;
+``` 
 
 https://leetcode.com/problems/last-person-to-fit-in-the-bus/
 
 > LeetCode 2481. Last Person to Fit in the Bus 
 >
 > 학습 포인트 : SUM( ) OVER (ORDER BY ...) 로 누적 합계 계산 후 조건 필터링 
+```sql
+SELECT person_name
+FROM (
+    SELECT person_name,
+           SUM(weight) OVER (ORDER BY turn) AS running_weight,
+           turn
+    FROM Queue
+) t
+WHERE running_weight <= 1000
+ORDER BY turn DESC
+LIMIT 1;
+``` 
 
 
 
@@ -351,9 +392,9 @@ https://leetcode.com/problems/last-person-to-fit-in-the-bus/
 
 ## 문제 인증란
 
-<!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
-
-
+![0901](sql_images/0901.png)
+![0902](sql_images/0902.png)
+![0903](sql_images/0903.png)
 
 ---
 
