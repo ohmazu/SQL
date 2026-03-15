@@ -542,6 +542,8 @@ SELECT
  MIN(score) AS min
 FROM review;
 ```
+![1409](sql_images/1409.png)
+
 #### 그룹별 특징 계산(GROUP BY)
 **`GROUP BY` 사용시 주의**
 - SELECT에는 GROUP BY에 포함된 컬럼과 집약 함수 불가능
@@ -558,6 +560,8 @@ SELECT
 FROM review
 GROUP BY user_id;
 ```
+![1410](sql_images/1410.png)
+
 #### 집약값과 원본값 같이 사용(윈도우 함수)
 - 윈도우 함수는 집약 결과 + 원본 데이터를 동시에 보여줄 수 있음 
 ```sql
@@ -570,6 +574,7 @@ SELECT
  score - AVG(score) OVER(PARTITION BY user_id) AS user_avg_score_diff
 FROM review;
 ```
+![1411](sql_images/1411.png)
 
 ### 3-2 그룹 내부의 순서
 
@@ -738,6 +743,7 @@ UNION ALL
 SELECT 'app2' AS app_name, user_id, name, NULL AS email
 FROM app2_mst_users;
 ```
+![1412](sql_images/1412.png)
 
 
 ### 4-2 여러 개의 테이블을 가로로 정렬하기
@@ -799,7 +805,7 @@ ON m.user_id = p.user_id
 
 GROUP BY m.user_id, m.card_number;
 ```
-
+![1413](sql_images/1413.png)
 
 ### 4-4 계산한 테이블에 이름 붙여 재사용하기
 - 복잡한 SQL에서는 중간 계산 테이블을 만들면 가독성이 좋아짐 
